@@ -62,7 +62,7 @@ En Python :
     - .sum(axis=1)          : somme ligne par ligne => rendement journalier du portefeuille
 '''
 
-# Poids personnalisés (somme = 1)
+# Poids choisis personnellement pour le portefeuille pondéré (somme = 1)
 portfolio_weights = np.array([0.30, 0.25, 0.20, 0.15, 0.10])
 
 # Calcul du rendement journalier du portefeuille pondéré
@@ -141,6 +141,7 @@ Chaque actif reçoit le même poids : w_i = 1 / N
     .iloc[:,0:numstocks] sélectionne uniquement les colonnes des actifs (exclut la colonne "Portfolio" déjà ajoutée à StockReturns)
 '''
 
+# Poids pour portefeuille équipondéré (EW)
 numstocks = NUM_STOCKS
 portfolio_weights_ew = np.repeat(1 / numstocks, numstocks)
 
@@ -214,6 +215,7 @@ On utilise ici des valeurs fixes approximatives (ordre de grandeur 2020).
 # Capitalisations boursières approximatives en milliards USD
 market_capitalizations = np.array([2500, 2200, 1800, 500, 400])  # AAPL, MSFT, AMZN, JPM, JNJ
 
+# Poids par capitalisation boursière
 mcap_weights = market_capitalizations / sum(market_capitalizations)
 
 print("\nPoids par capitalisation boursière :")
